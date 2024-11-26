@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laberinto Interactivo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <!-- Cargar TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    
+    <!-- Cargar Teachable Machine Image -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+    <!-- Contenedor para el video de la cámara -->
+    <div id="webcam-container">
+        <video id="webcam" autoplay playsinline></video>
+    </div>
+
+    <!-- Laberinto -->
+    <div id="laberinto">
+        <div id="celdaA">
+            <div class="lateral">?</div>
+            <div class="vertical">?</div>
+        </div>
+        <div id="celdaB">
+            <div class="lateral">?</div>
+            <div class="vertical">?</div>
+            <img src="img/jugador.png" alt="Jugador" class="jugador">
+        </div>
+        <div id="celdaC">
+            <div class="vertical">?</div>
+            <img src="img/salida.png" alt="Salida" class="salida">
+        </div>
+        <div id="celdaD">
+            <div class="lateral">?</div>
+            <div class="vertical">?</div>
+        </div>
+        <div id="celdaE">
+            <div class="lateral">?</div>
+            <div class="vertical">?</div>
+        </div>
+        <div id="celdaF">
+            <div class="vertical">?</div>
+        </div>
+        <div id="celdaG">
+            <div class="lateral">?</div>
+        </div>
+        <div id="celdaH">
+            <div class="lateral">?</div>
+            <img src="img/trampa.png" alt="Trampa" class="trampa">
+        </div>
+        <div id="celdaI"></div>
+    </div>
+
+    <!-- Cargar los scripts -->
+    <script src="js/laberinto.js"></script>
+    <script src="js/modelo.js"></script>
+</body>
+</html>

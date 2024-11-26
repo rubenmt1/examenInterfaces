@@ -1,0 +1,91 @@
+/* Estilo general de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+/* Contenedor del laberinto */
+#laberinto {
+    margin-top: 250px; /* Deja espacio suficiente para que la cámara no lo tape */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+}
+
+/* Celdas del laberinto */
+#laberinto > div {
+    text-align: center;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    position: relative;
+}
+
+/* Estilo para la webcam */
+#webcam-container {
+    position: absolute;
+    top: 20px; /* Coloca la cámara al principio de la página */
+    left: 50%;
+    transform: translateX(-50%); /* Centra la cámara horizontalmente */
+    width: 320px;
+    height: 240px;
+    z-index: 10; /* La cámara debe estar encima del laberinto */
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+/* Estilo del video de la cámara */
+#webcam {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilo común para los íconos (jugador, salida y trampa) */
+.jugador, .salida, .trampa {
+    position: absolute;
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    height: 40px;
+    z-index: 3;
+}
+
+/* Efecto de parpadeo para el jugador */
+.jugador {
+    animation: parpadeo 1s infinite;
+}
+
+/* Estilo de la salida */
+.salida {
+    position: absolute;
+    color: green;
+}
+
+/* Estilo de la trampa */
+.trampa {
+    position: absolute;
+    color: red;
+}
+
+/* Animación de parpadeo */
+@keyframes parpadeo {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
